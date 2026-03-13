@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mjölkbehandling</title>
+    <script type="module" src="/main.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div id="diagram-tabs" class="diagram-tabs" aria-label="Välj sida"></div>
+      <div class="top-bar-actions">
+        <div id="account-actions" class="account-actions" aria-label="Kontoåtgärder"></div>
+        <button
+          id="help-button"
+          class="help-button"
+          type="button"
+          aria-label="Öppna hjälp för aktuell sida"
+        >
+          ?
+        </button>
+      </div>
+    </div>
+
+    <main class="app-shell">
+      <div id="diagram-filters" class="diagram-filters" aria-label="Diagramfilter"></div>
+      <div
+        id="svg-root"
+        class="svg-stage"
+        aria-label="Interaktiv processkarta"
+      ></div>
+    </main>
+
+    <div id="popup-root"></div>
+  </body>
+</html>
