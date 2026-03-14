@@ -1,5 +1,3 @@
-import "./styles.css";
-
 const USERS_KEY = "users";
 const SESSION_KEY = "session";
 const NOTE_PREFIX = "notes::";
@@ -9,12 +7,12 @@ const AUTO_LOGOUT_TIMES = ["05:45", "13:45", "17:45", "21:45"];
 const AUTO_LOGOUT_MESSAGE = "Du har blivit utloggad. Vid skiftöverlämning [05:45 , 13:45 , 17:45 , 21:45] sker en automatisk utloggning.";
 const SITE_PASSWORD = "mbh2026";
 const LIST_ACTION_ICON_FILES = {
-  edit: new URL("./Ikoner/PEN.svg", import.meta.url).href,
-  up: new URL("./Ikoner/UP.svg", import.meta.url).href,
-  down: new URL("./Ikoner/DOWN.svg", import.meta.url).href,
-  delete: new URL("./Ikoner/Delete.svg", import.meta.url).href,
-  add: new URL("./Ikoner/PLUS.svg", import.meta.url).href,
-  color: new URL("./Ikoner/Color.svg", import.meta.url).href,
+  edit: "./Ikoner/PEN.svg",
+  up: "./Ikoner/UP.svg",
+  down: "./Ikoner/DOWN.svg",
+  delete: "./Ikoner/Delete.svg",
+  add: "./Ikoner/PLUS.svg",
+  color: "./Ikoner/Color.svg",
 };
 const TABS = ["Produktion", "Disk", "Övrigt"];
 const LIST_COLUMNS = [
@@ -41,11 +39,11 @@ const POPUP_NAME_MAP = {
   "FÖRSKÖLJ-TANK DC1": "FÖRSKÖLJ-TANK DC1",
 };
 const DIAGRAMS = [
-  { id: "MBH", label: "Mjölkbehandling", file: new URL("./MBH.svg", import.meta.url).href },
-  { id: "VBH", label: "Vasslebehandling", file: new URL("./VBH.svg", import.meta.url).href },
-  { id: "DI", label: "Disk Info", file: new URL("./DI.svg", import.meta.url).href },
+  { id: "MBH", label: "Mjölkbehandling", file: "./MBH.svg" },
+  { id: "VBH", label: "Vasslebehandling", file: "./VBH.svg" },
+  { id: "DI", label: "Disk Info", file: "./DI.svg" },
   { id: "LIST", label: "Flödeslistor", file: null },
-  { id: "KA", label: "Karta Apparatsal", file: new URL("./KA.svg", import.meta.url).href },
+  { id: "KA", label: "Karta Apparatsal", file: "./KA.svg" },
 ];
 const HELP_CONTENT = {
   MBH: "Klicka på ett objekt för att öppna dess popup.\nDär inne kan du redigera dina anteckningar.\nSamma objekt har samma popup på olika sidor.",
