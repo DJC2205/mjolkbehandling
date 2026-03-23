@@ -374,10 +374,10 @@ function renderListBoardPage() {
     <section
       class="list-board"
       aria-label="Listor"
-      style="display:grid;grid-template-columns:repeat(${LIST_COLUMNS.length}, minmax(0, 1fr));gap:6px;width:100%;height:100%;min-height:0;"
+      style="display:grid;grid-template-columns:repeat(${LIST_COLUMNS.length}, minmax(0, 1fr));gap:2px;width:100%;height:100%;min-height:0;align-items:stretch;justify-items:stretch;"
     >
       ${LIST_COLUMNS.map((column) => `
-        <section class="list-column" style="min-width:0;height:100%;box-sizing:border-box;">
+        <section class="list-column" style="width:100%;max-width:none;min-width:0;height:100%;box-sizing:border-box;">
           <header class="list-column-header">
             <h2 class="list-column-title">${column.label}</h2>
             <button
