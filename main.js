@@ -18,6 +18,7 @@ const TABS = ["Produktion", "Disk", "Övrigt"];
 const LIST_COLUMNS = [
   { id: "mjolk", label: "Mjölk" },
   { id: "vassle", label: "Vassle" },
+  { id: "gradde", label: "Grädde" },
   { id: "ovrigt", label: "Övrigt" },
 ];
 const LIST_STATUS_ORDER = ["none", "red", "green"];
