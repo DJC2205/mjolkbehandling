@@ -18,6 +18,7 @@ const TABS = ["Produktion", "Disk", "Övrigt"];
 const LIST_COLUMNS = [
   { id: "mjolk", label: "Mjölk" },
   { id: "vassle", label: "Vassle" },
+  { id: "gradde", label: "Grädde" },
   { id: "ovrigt", label: "Övrigt" },
 ];
 const LIST_STATUS_ORDER = ["none", "red", "green"];
@@ -370,9 +371,13 @@ function renderLoggedOutView() {
 
 function renderListBoardPage() {
   svgRoot.innerHTML = `
-    <section class="list-board" aria-label="Listor">
+    <section
+      class="list-board"
+      aria-label="Listor"
+      style="display:grid;grid-template-columns:repeat(${LIST_COLUMNS.length}, minmax(0, 1fr));gap:6px;width:100%;height:100%;min-height:0;"
+    >
       ${LIST_COLUMNS.map((column) => `
-        <section class="list-column">
+        <section class="list-column" style="min-width:0;height:100%;box-sizing:border-box;">
           <header class="list-column-header">
             <h2 class="list-column-title">${column.label}</h2>
             <button
@@ -514,7 +519,7 @@ async function ensureListActionIconsLoaded() {
   }
 
   const loadedEntries = await Promise.all(missingEntries.map(async ([key, file]) => {
-    const response = await fetch(file);
+    const response = await fetch(file, { cache: "no-store" });
     const markup = await response.text();
     return [key, normalizeIconSvgMarkup(markup)];
   }));
@@ -551,10 +556,8 @@ async function renderActiveDiagram() {
     return;
   }
 
-  if (!state.svgMarkupByDiagram[diagram.id]) {
-    const response = await fetch(diagram.file);
-    state.svgMarkupByDiagram[diagram.id] = await response.text();
-  }
+  const response = await fetch(diagram.file, { cache: "no-store" });
+  state.svgMarkupByDiagram[diagram.id] = await response.text();
 
   svgRoot.innerHTML = state.svgMarkupByDiagram[diagram.id];
 

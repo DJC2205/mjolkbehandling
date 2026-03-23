@@ -233,19 +233,25 @@ body.diagram-ka .app-shell {
   width: 100%;
   height: 100%;
   min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
   align-items: start;
+  overflow: hidden;
 }
 
 .list-column {
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 18px) / 4);
+  width: calc((100% - 18px) / 4);
+  max-width: calc((100% - 18px) / 4);
   height: 100%;
   min-height: 0;
+  min-width: 0;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 12px;
-  padding: 16px;
+  gap: 8px;
+  padding: 10px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(17, 17, 17, 0.08);
@@ -256,12 +262,17 @@ body.diagram-ka .app-shell {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
+  min-width: 0;
 }
 
 .list-column-title {
   margin: 0;
-  font-size: 1.2rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.92rem;
   letter-spacing: -0.03em;
 }
 
